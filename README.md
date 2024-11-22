@@ -1,7 +1,9 @@
 # Weather analysis
 Are you worried about climate change? Do you want to see the climate of your city compared to other cities in the world?
 
-I will analyze a dataset of 3 tables with daily weather data from weather stations from all over the world since the 19th century. 
+I will analyze a dataset of 3 tables with daily weather data from weather stations from all over the world since the 19th century.
+
+![](images/_MG_6896.jpg)
 
 ## First inspection
 
@@ -234,17 +236,10 @@ So I cannot exclude the days where precipitation_mm = 0, because they contribute
 
 I don't worry too much about the extreme high values of rainfall, because I can just exclude these values with a filter in Power BI.
 
-## Rainy cities and **['yearly_rainy_days']**
-
-So I start looking for really rainy cities.
-I create a new column ['yearly_rainy_days'] which calculates the rainy days in a city per year, and I sort the values by this column.
-
-Surprise surprise, there are some cities with more than 365 yearly rainy days, which doesn't make sense.
-This is because station_id is not unique, and there are also some cities with the same name, such as Barcelona.
-So I have to create a new column ['station_name'] concatenating the station_id and the city_name, and when I group it by this column and sort it again by ['yearly_rainy_days'], there are no more cities with more than 365 yearly rainy days.
-
 ## Snow analysis
 With Pandas I apply some filters and sort the values by the maximum average of snow_depth_mm, but I find some strange results such as cities with very few rainy days and cities in not so cold countries, such as Italy.
+
+![](images/28_snowy_cities.png)
 
 I look at these cases in more detail and I effectively find that this data is wrong, so after a deep analysis I create a new dataframe with selected cities from different countries, taking only 2 cities from Russia, in very different regions, to include cities from many countries. 
 
@@ -252,12 +247,23 @@ Snowy Cities: Vaduz, Taraz (Kazakhstan), Tromsø, Sapporo (Japan), Petropavlovsk
 
 When I import this csv file into Power BI, I do a quick analysis of the years registered with a line chart, with the year and the sum(snow_depth_mm), and I find that Vaduz has clearly wrong data, since the sum(snow_depth_mm) is way higher than the rest, so I decide to exclude this city from the dataframe.
 
-Most cities have snow data from 1973, so I apply this filter, but the I find that Petropavlovsk-Kamchatsky (Russia) has only data from 1997, so I exclude it.
+Most cities have snow data from 1973, so I apply this filter, but then I find that Petropavlovsk-Kamchatsky (Russia) has only data from 1997, so I exclude it.
 
 I also find that Taraz has a weird peak in 1994 and has snow data only until 1998, so I exclude it as well.
 
 Sapporo has no data from 2003 to 2013.
-Mikkeli has only data from 1977 to 2006.
+
+Mikkeli has only data from 1982 to 2006, so this will be the constraint.
+
+In the end I am left with Tromsø, Syktyvkar (Russia), Brașov (Romania) and Mikkeli (Finland).
+
+# Conclusions
+
+In the end we have studied mostly the rainfall and temperature. 
+
+Comparing the accumulated rainfall and the number of rainy days gave us an interesting relationship and details about rain behaviour in different places. 
+
+Regarding temperature, we studied the relationship between the avg, the max and min temperatures, seeing also that many places, although having the same average temperature, are very seasonal and are very extreme in winter and summer.
 
 
 
