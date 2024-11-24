@@ -7,7 +7,7 @@ I will analyze a dataset of 3 tables with daily weather data from weather statio
 
 ## First inspection
 
-We have 3 tables. The main one, daily_weather, contains daily measures from all the stations.
+We have 3 tables. The main one, *dfdailyweather*, contains daily measures from all the stations.
 Taking a first glance at this first table, we can see the info that contains: station_id, city_name, date, and mostly info from temperature, precipitation and wind.
 
 ![](images/02_sample.png)
@@ -17,6 +17,8 @@ The other 2 tables give us info about the cities and the countries.
 ![](images/03_cities_sample.png)
 
 ![](images/04_countries_sample.png)
+
+*Countries* and *cities* are the original datasets downloaded from Kaggle, **dfcountries** and **dfcities** are the ones after making some changes, the ones I use in Power BI.
 
 ## Hypothesis
 Considering the data we have, we could analyze the following:
