@@ -259,6 +259,23 @@ Mikkeli has only data from 1982 to 2006, so this will be the constraint.
 
 In the end I am left with Tromsø, Syktyvkar (Russia), Brașov (Romania) and Mikkeli (Finland).
 
+I want to know the monthly distribution of the snow, and when I display it in a graph, I see odd values in the summer, especially in Brașov. 
+
+![](images/29_powerbi_wrongsnow_brasov_summer.png)
+
+So I investigate with MySQL and Power BI and delete these extreme values of snow in random days in the summer. 
+
+I also notice the averages are bit weird, and I find out it's because when there was not snow all the cities have some null values except Tromsø, which in these days has snow_depth_mm = 0.
+
+So I change all the null values to 0 with *fillna*.
+
+Before:
+![](images/30_powerbi_wrongsnow_nan.png)
+
+After:
+![](images/31_powerbi_correctsnow.png)
+
+
 # Conclusions
 
 In the end we have studied mostly the rainfall and temperature. 
