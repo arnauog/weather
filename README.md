@@ -1,4 +1,9 @@
 # Weather analysis
+
+[View the Power BI report](https://app.powerbi.com/view?r=eyJrIjoiMzY2OTQ2ZmEtZWNhYi00NDFlLThkM2YtMjk5MGY0NjYzODQ2IiwidCI6ImU0YmQyNWE1LWY4ZjgtNGUwOC04ZjNiLWIyNjM5YjNiZjlmYyJ9&pageName=b6b4a724dc9d076e1eb6)
+
+[View the Tableau report]
+
 Are you worried about climate change? Do you want to see the climate of your city compared to other cities in the world?
 
 I will analyze a dataset of 3 tables with daily weather data from weather stations from all over the world since the 19th century.
@@ -222,7 +227,7 @@ I do some research in SQL and on internet and it doesn't make sense. So I will e
 
 ![](images/27_temp_dominica.png) 
 
-## Longitude and rain
+## Rain
 
 What about the longitude? We can see visually from West to East the rainiest places on Earth. 
 
@@ -237,6 +242,8 @@ Of course Yemen has an average so high, if it rained only 7 days and one of them
 So I cannot exclude the days where precipitation_mm = 0, because they contribute to the mean, which I'm displaying in the scatterplot. 
 
 I don't worry too much about the extreme high values of rainfall, because I can just exclude these values with a filter in Power BI.
+
+I figure it makes more sense to display the latitude than the longitude, since the rain depends more on wether the country is tropical, near the Equator or not. This way we can also compare it with the previous graph we did with the temperature.
 
 ## Snow analysis
 With Pandas I apply some filters and sort the values by the maximum average of snow_depth_mm, but I find some strange results such as cities with very few rainy days and cities in not so cold countries, such as Italy.
@@ -270,9 +277,11 @@ I also notice the averages are bit weird, and I find out it's because when there
 So I change all the null values to 0 with *fillna*.
 
 Before:
+
 ![](images/30_powerbi_wrongsnow_nan.png)
 
 After:
+
 ![](images/31_powerbi_correctsnow.png)
 
 
