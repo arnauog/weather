@@ -1,8 +1,8 @@
 # Weather analysis
 
-[View the Power BI report](https://app.powerbi.com/view?r=eyJrIjoiMzY2OTQ2ZmEtZWNhYi00NDFlLThkM2YtMjk5MGY0NjYzODQ2IiwidCI6ImU0YmQyNWE1LWY4ZjgtNGUwOC04ZjNiLWIyNjM5YjNiZjlmYyJ9&pageName=b6b4a724dc9d076e1eb6)
+[View the Power BI report](https://app.powerbi.com/view?r=eyJrIjoiNTYyYjJjMmYtODNkMy00MjkyLTk4MDctOTFkYzliMTI5ZjkwIiwidCI6ImU0YmQyNWE1LWY4ZjgtNGUwOC04ZjNiLWIyNjM5YjNiZjlmYyJ9&pageName=b6b4a724dc9d076e1eb6)
 
-[View the Tableau report]
+[View the Tableau report](https://public.tableau.com/app/profile/arnau.orengo/viz/Weather_17337709984580/BcnvsLondon?publish=yes)
 
 Are you worried about climate change? Do you want to see the climate of your city compared to other cities in the world?
 
